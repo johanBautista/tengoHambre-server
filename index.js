@@ -6,6 +6,9 @@ const app = express();
 // conectar a la base de datos
 conectarDB();
 
+//habilitar express.json antes hecho con bodyparset
+app.use(express.json({ extended: true }));
+
 //puerto de la app
 const PORT = process.env.PORT || 4000;
 
