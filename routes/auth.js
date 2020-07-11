@@ -1,11 +1,11 @@
-// rutas para crear usuario
+// rutas para autenticar usuario
 const express = require('express');
 const router = express.Router();
-const usuarioController = require('../controller/usuarioController');
 const { check } = require('express-validator');
+const authController = require('../controller/authController');
 
 //crear usuario
-// api/usuarios
+// api/auth
 router.post(
   '/',
   [
@@ -14,6 +14,6 @@ router.post(
       min: 3,
     }),
   ],
-  usuarioController.crearUsuario,
+  authController.autenticarUsuario,
 );
 module.exports = router;
